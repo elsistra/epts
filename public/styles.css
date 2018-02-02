@@ -1,0 +1,56 @@
+#leftmenu{
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-bottom: 10px;
+}
+#maincontent{
+  flex-grow: 1;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+#container{
+  display: flex;
+}
+#header{
+  background-color: #dfdfdf;
+  padding-left: 5px;
+  margin-bottom: 15px;
+  vertical-align: center;
+}
+#header-logo-div{
+  font-size: 16pt;
+  padding-right: 20px;
+  color: #4682B4; !important
+}
+#header-logo-div2{
+  flex-grow: 1;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+h2{
+  text-decoration: none;
+}
+a{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.div-table {
+  display: table;
+  width: auto;
+  align-self: center;
+  border-spacing: 5px; /* cellspacing:poor IE support for  this */
+}
+.menu-item, .tr{
+  min-height: 30px;
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+.tr:nth-child(even){
+  background-color: #eee;
+}
+a:hover{
+  color: #4682B4;
+}
