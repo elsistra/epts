@@ -13,14 +13,14 @@ const realtimeServer = io(httpServer);
 // Set the View Engine
 app.set('view engine', 'ejs');
 // Connect to Database
-var url = "mongodb://localhost:27017/state00";
+var url = "mongodb://localhost:27017/epts";
 mongodb.connect(url, function(err, client) {
   if (err) throw err;
   console.log("Database connection success");
   // MongoDB includes a ObjectID property
   const ObjectId = mongodb.ObjectId;
   // Specify the Database name for MongoDB
-  const db = client.db('state00');
+  const db = client.db('epts');
   //Sets the database to global app variable?
   app.set('db', db);
   // Specify the collection inside the database we will be working with
@@ -45,8 +45,8 @@ mongodb.connect(url, function(err, client) {
   require('./routes/admin')(app);
   // Render the dashboard page on request
   require('./routes/dashboard')(app);
-  require('./routes/profile')(app);
-  require('./routes/state')(app);
+  require('./routes/orders')(app);
+  require('./routes/new-order')(app);
   require('./routes/log-in')(app);
 
   // REAL TIME SERVER EMITS AND LISTENERS HERE -------------------------------------------------------------

@@ -1,0 +1,16 @@
+<%- include('header'); %>
+<div id='container'>
+  <div id='leftmenu'><%- include('leftmenu'); %></div>
+  <div id='maincontent'>
+    <div id="header-logo-div">Create New Order</div>
+    <form method="post" action="new-order">
+      <ul>
+        <li><input type="text" name="name" placeholder="Enter an Item Name" /></li>
+        <li><input type="number" name='number' placeholder="Enter Quantity" /></li>
+        <li><textarea name="content" placeholder="Description or notes about order. Please be detailed."></textarea></li>
+        <li><input type="submit" value="Create Order"/></li>
+      </ul>
+    </form>
+  </div>
+</div>
+<%- include('footer'); %>

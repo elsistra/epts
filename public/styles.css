@@ -36,6 +36,13 @@ a{
   text-decoration: none;
   color: inherit;
 }
+ul{
+  list-style-type: none;
+}
+textarea{
+  width: 500px;
+  height: 225px;
+}
 .div-table {
   display: table;
   width: auto;

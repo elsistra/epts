@@ -23,7 +23,7 @@ module.exports = function (app) {
       //If user exists, assign them a session
       if(user_exists_check){
         req.session.username = user;
-        res.redirect('/dashboard')
+        res.redirect('/orders')
       }else{
         console.log('No user found with those credentials');
       }
