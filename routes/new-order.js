@@ -21,10 +21,10 @@ module.exports = function (app) {
 
     // Ensure no fields are empty
     if (!name || !number || !content) {
-      console.log('A field was left empty');
+      window.console.log('A field was left empty');
     }else{
       // Insert into database
-      const result = await orders.insert({name: name, number: number, content: content});
+      await orders.insert({name: name, number: number, content: content});
       //Send the user back to the page they were on
       res.redirect('/orders');
     }

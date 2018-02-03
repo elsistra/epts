@@ -8,7 +8,14 @@
 <div id='container'>
   <div id='leftmenu'><%- include('leftmenu'); %></div>
   <div id='maincontent'>
-    <ul id="ordersList"></ul>
+    <div id="header-title-div">Orders</div>
+    <div class="table" id='ordersList'>
+      <div class='row'>
+        <div class='cell'><b>Name</b></div>
+        <div class='cell'><b>Qty</b></div>
+        <div class='cell'><b>Description</b></div>
+      </div>
+    </div>
   </div>
 </div>
 <%- include('footer'); %>

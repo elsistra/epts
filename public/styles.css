@@ -5,7 +5,7 @@
 }
 #maincontent{
   flex-grow: 1;
-  padding-left: 5px;
+  padding-left: 30px;
   padding-top: 5px;
 }
 #container{
@@ -19,7 +19,9 @@
 }
 #header-logo-div{
   font-size: 16pt;
+  font-weight: bolder;
   padding-right: 20px;
+  padding-bottom: 10px;
   color: #4682B4; !important
 }
 #header-logo-div2{
@@ -27,6 +29,12 @@
   text-align: right;
   padding-top: 5px;
   padding-right: 5px;
+}
+#header-title-div{
+  font-size: 14pt;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  color: #4682B4; !important
 }
 h2{
   text-decoration: none;
@@ -38,16 +46,14 @@ a{
 }
 ul{
   list-style-type: none;
+  margin: none;
+  -webkit-margin-before: 0em;
+  -webkit-padding-start: 0px;
+  -webkit-margin-after: 0em;
 }
 textarea{
   width: 500px;
   height: 225px;
-}
-.div-table {
-  display: table;
-  width: auto;
-  align-self: center;
-  border-spacing: 5px; /* cellspacing:poor IE support for  this */
 }
 .menu-item, .tr{
   min-height: 30px;
@@ -60,4 +66,20 @@ textarea{
 }
 a:hover{
   color: #4682B4;
+}
+.table {
+  display:table;
+}
+.row {
+  display:table-row;
+}
+.cell {
+  display:table-cell;
+  vertical-align: middle;
+}
+.cell + .cell{
+  padding-left: 10px;
+}
+.row:nth-child(even){
+  background-color: #eee;
 }
