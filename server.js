@@ -25,6 +25,7 @@ mongodb.connect(url, function(err, client) {
   app.set('db', db);
   // Specify the collection inside the database we will be working with
   const users = db.collection("users");
+  const orders = db.collection("orders");
   // Settup sessions
   app.use(session({
     secret: 'keyboard cat',
@@ -35,15 +36,11 @@ mongodb.connect(url, function(err, client) {
 
 
   // ROUTE HANDLERS BELOW THIS LINE -----------------------------------------------------------------------------
-  // Render the index page on request
+  // Render pages on request
   require('./routes/index')(app);
-  //Handle user Sign-Out
   require('./routes/sign-out')(app);
-  // Render the register page on request
   require('./routes/register')(app);
-  // Render the admin page on request
   require('./routes/admin')(app);
-  // Render the dashboard page on request
   require('./routes/dashboard')(app);
   require('./routes/orders')(app);
   require('./routes/new-order')(app);
@@ -51,12 +48,21 @@ mongodb.connect(url, function(err, client) {
 
   // REAL TIME SERVER EMITS AND LISTENERS HERE -------------------------------------------------------------
   realtimeServer.on('connect', function (socket) {
-    // A client has connected to the realtime server.
+  // A client has connected to the realtime server.
+
     socket.on('want-users-list', async function () {
       // This client is asking for users list data. Ok.
       const usersList = await users.find().toArray();
       socket.emit('users-list', usersList);
     });
+
+    socket.on('want-orders-list', async function () {
+      // This client is asking for orders list data. Ok.
+      const ordersList = await orders.find().toArray();
+      socket.emit('orders-list', ordersList);
+    });
+
+
   });
 
   //Start the server

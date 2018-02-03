@@ -1,7 +1,5 @@
 module.exports = function (app) {
 
-  const http = require('http');
-  const httpServer = http.createServer(app);
   const bodyParser = require('body-parser');
   const urlencodedBodyParser = bodyParser.urlencoded({ extended: false });
 
