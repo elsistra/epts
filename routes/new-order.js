@@ -19,12 +19,18 @@ module.exports = function (app) {
     let number = req.body.number;
     let content = req.body.content;
 
+    const date = new Date(); // Current date and time
+    const year = date.getFullYear();
+    const day = date.getDate(); // Unsure here
+    const month = date.getMonth() + 1; // Month index is from 0 = January
+    const dateString = month + '/' + day + '/' + year;
+
     // Ensure no fields are empty
     if (!name || !number || !content) {
       window.console.log('A field was left empty');
     }else{
       // Insert into database
-      await orders.insert({name: name, number: number, content: content});
+      await orders.insert({name: name, number: number, content: content, date: dateString, status: 'Processing'});
       //Send the user back to the page they were on
       res.redirect('/orders');
     }
