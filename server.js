@@ -43,6 +43,7 @@ mongodb.connect(url, function(err, client) {
   require('./routes/orders')(app);
   require('./routes/new-order')(app);
   require('./routes/new-comment')(app);
+  require('./routes/new-status')(app);
   require('./routes/log-in')(app);
   require('./routes/order')(app);
 
