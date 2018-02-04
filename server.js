@@ -17,8 +17,6 @@ var url = "mongodb://localhost:27017/epts";
 mongodb.connect(url, function(err, client) {
   if (err) throw err;
   console.log("Database connection success");
-  // MongoDB includes a ObjectID property
-  const ObjectId = mongodb.ObjectId;
   // Specify the Database name for MongoDB
   const db = client.db('epts');
   //Sets the database to global app variable?

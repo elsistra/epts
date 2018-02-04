@@ -48,14 +48,9 @@ socket.on('orders-list', function (ordersArray) {
     childElement3.textContent = order.status;
 
     //Create a new div element with class divCell
-    const childElement4 = document.createElement('div');
-    childElement4.classList.add('cell');
-    childElement4.textContent = order.content;
-
-    //Create a new div element with class divCell
     const childElement5 = document.createElement('a');
     childElement5.classList.add('cell');
-    childElement5.setAttribute('href', '/order?id=' + order._id);
+    childElement5.setAttribute('href', '/order/' + order._id);
     childElement5.textContent = 'View';
 
     //Append the new div element to its parent
@@ -65,7 +60,6 @@ socket.on('orders-list', function (ordersArray) {
     newElement.appendChild(childElement1);
     newElement.appendChild(childElement2);
     newElement.appendChild(childElement3);
-    newElement.appendChild(childElement4);
     newElement.appendChild(childElement5);
   });
 });
