@@ -53,7 +53,7 @@ ul{
   -webkit-margin-after: 0em;
 }
 textarea{
-  width: 500px;
+  width: 100%;
   height: 225px;
 }
 .menu-item, .tr{
@@ -80,4 +80,11 @@ textarea{
 }
 .cell + .cell{
   padding-left: 10px;
+}
+.littleTopMargin{
+  margin-top: 5px;
+}
+.section{
+  height: 2px;
+  background: #eee;
 }

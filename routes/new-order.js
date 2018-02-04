@@ -30,7 +30,7 @@ module.exports = function (app) {
       window.console.log('A field was left empty');
     }else{
       // Insert into database
-      await orders.insert({name: name, number: number, content: content, date: dateString, status: 'Processing'});
+      await orders.insert({name: name, user: req.session.username, number: number, content: content, date: dateString, status: 'Processing'});
       //Send the user back to the page they were on
       res.redirect('/orders');
     }

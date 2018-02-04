@@ -42,6 +42,7 @@ mongodb.connect(url, function(err, client) {
   require('./routes/dashboard')(app);
   require('./routes/orders')(app);
   require('./routes/new-order')(app);
+  require('./routes/new-comment')(app);
   require('./routes/log-in')(app);
   require('./routes/order')(app);
 
