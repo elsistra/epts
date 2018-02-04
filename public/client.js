@@ -52,6 +52,12 @@ socket.on('orders-list', function (ordersArray) {
     childElement4.classList.add('cell');
     childElement4.textContent = order.content;
 
+    //Create a new div element with class divCell
+    const childElement5 = document.createElement('a');
+    childElement5.classList.add('cell');
+    childElement5.setAttribute('href', '/order?id=' + order._id);
+    childElement5.textContent = 'View';
+
     //Append the new div element to its parent
     listElement.appendChild(newElement);
     //Append the child element to the new element
@@ -60,5 +66,6 @@ socket.on('orders-list', function (ordersArray) {
     newElement.appendChild(childElement2);
     newElement.appendChild(childElement3);
     newElement.appendChild(childElement4);
+    newElement.appendChild(childElement5);
   });
 });
