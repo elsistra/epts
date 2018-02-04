@@ -12,7 +12,7 @@ module.exports = function (app) {
     let pass = req.body.password;
     // Ensure no fields are empty
     if(!user || !pass){
-      console.log('A field was left empty');
+      window.console.log('A field was left empty');
     }else{
 
       const db = app.get('db')
@@ -25,7 +25,7 @@ module.exports = function (app) {
         req.session.username = user;
         res.redirect('/orders')
       }else{
-        console.log('No user found with those credentials');
+        window.console.log('No user found with those credentials');
       }
     }
   });
