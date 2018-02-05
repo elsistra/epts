@@ -8,6 +8,9 @@
 <div id='container'>
   <div id='leftmenu'><%- include('leftmenu'); %></div>
   <div id='maincontent'>
+    <div id="header-title-div">How it happens</div>
+    <div>Order placed -> Quote requested from Vendor ->  Quote sent back to user -> User creates reqesition order - > Requisition order is approved -> Customer creates Purchase Order -> Purchase order sent to purchasing -> Purchasing sends PO to Vendor -> Vendor delivers items -> Items prepared and delivered</div>
+    </br>
     <div id="header-title-div">Order Information</div>
       <div><b>Filed By:</b> <%= order.user %></div>
       <div><b>File Date:</b> <%= order.date %></div>
