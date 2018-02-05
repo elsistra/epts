@@ -5,12 +5,15 @@
 </head>
 
 <%- include('header'); %>
+<div id='container'>
+  <div id='leftmenu'><%- include('leftmenu'); %></div>
+  <div id='maincontent'>
+    <div id="header-title-div">Admin</div>
+    <div>
+      <b>Registered Users</b><br/>
+      <ul id="usersList"></ul>
+    </div>
 
-<!--- Output List of users from Client.js !-->
-<div>
-  <h3>Admin</h3>
-  <b>Registered Users</b><br/>
-  <ul id="usersList"></ul>
+  </div>
 </div>
-
 <%- include('footer'); %>

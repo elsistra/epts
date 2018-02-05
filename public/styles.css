@@ -39,10 +39,10 @@ h2{
   text-decoration: none;
 }
 a{
-  display: block;
+  display: inline-block;
   color: #4682B4;
 }
-a:hover, a:visited{
+a:hover{
   color: grey;
 }
 ul{
