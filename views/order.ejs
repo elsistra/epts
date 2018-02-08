@@ -50,7 +50,8 @@
       <form method="POST" action="/new-comment">
         <input type="hidden" name="orderId" value="<%= order._id %>" />
         <div><textarea name="commentContent"></textarea></div>
-        <input type="submit" class="littleTopMargin" value="Add Comment"/>
+        <input type="submit" class="littleTopMargin" value="Save"/>&nbsp;
+        <input type="file" name="file"/>
       </form>
   </div>
 </div>
