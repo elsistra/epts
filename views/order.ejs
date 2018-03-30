@@ -41,13 +41,16 @@
         <div><i>By</i> <%= comments[i].user %> <i>on</i> <%= comments[i].date %> </div>
         </br>
         <div class='commentDiv'><%= comments[i].content %></div>
+        <% if (comments[i].fileWebPath) { %>
+          <div class='fileDiv'><img src="<%= comments[i].fileWebPath %>" /></div>
+        <% } %>
         </br>
       <% } %>
 
       <div class="section"></div>
       </br>
       <div><b>Add a Comment</b></div>
-      <form method="POST" action="/new-comment">
+      <form method="POST" action="/new-comment" enctype="multipart/form-data">
         <input type="hidden" name="orderId" value="<%= order._id %>" />
         <div><textarea name="commentContent"></textarea></div>
         <input type="submit" class="littleTopMargin" value="Save"/>&nbsp;
